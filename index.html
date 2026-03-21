@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Layered Up — 3D Printed Products & Maker Deals</title>
+    <meta name="description" content="Original 3D printed products, maker deals, and print timelapses. Shop on TikTok, YouTube, Etsy, Amazon & more.">
+    <link rel="icon" href="icon.png" type="image/png">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #fff; min-height: 100vh; }
-        
+
         .hero {
             text-align: center;
             padding: 80px 20px 60px;
@@ -16,7 +18,8 @@
         .hero h1 { font-size: 3.5em; margin-bottom: 10px; letter-spacing: 2px; }
         .hero h1 span { color: #00E5FF; }
         .hero .tagline { font-size: 1.3em; color: #aaa; margin-bottom: 40px; }
-        
+
+        /* Platform badges — now clickable links */
         .platforms {
             display: flex;
             justify-content: center;
@@ -25,18 +28,51 @@
             margin-bottom: 50px;
         }
         .platform-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
             background: rgba(255,255,255,0.08);
             border: 1px solid rgba(255,255,255,0.15);
             border-radius: 25px;
             padding: 8px 20px;
             font-size: 0.95em;
             color: #ccc;
+            text-decoration: none;
+            transition: background 0.2s, border-color 0.2s, transform 0.2s;
+            cursor: pointer;
         }
-        
+        .platform-badge:hover {
+            background: rgba(0, 229, 255, 0.12);
+            border-color: #00E5FF;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .platform-badge.coming-soon {
+            opacity: 0.5;
+            cursor: default;
+            position: relative;
+        }
+        .platform-badge.coming-soon:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.15);
+            color: #ccc;
+            transform: none;
+        }
+        .platform-badge.coming-soon::after {
+            content: "Coming Soon";
+            position: absolute;
+            bottom: -22px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.7em;
+            color: #666;
+            white-space: nowrap;
+        }
+
         .section { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
         .section h2 { font-size: 2em; margin-bottom: 30px; text-align: center; }
         .section h2 span { color: #00E5FF; }
-        
+
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -53,7 +89,7 @@
         .feature .icon { font-size: 2.5em; margin-bottom: 15px; }
         .feature h3 { font-size: 1.2em; margin-bottom: 10px; color: #00E5FF; }
         .feature p { color: #999; line-height: 1.6; }
-        
+
         .how-it-works {
             background: rgba(0, 229, 255, 0.03);
             border-top: 1px solid rgba(0, 229, 255, 0.1);
@@ -84,7 +120,53 @@
         }
         .step p { color: #ccc; font-size: 0.95em; }
         .arrow { color: #00E5FF; font-size: 2em; align-self: center; padding-top: 20px; }
-        
+
+        /* Shop section */
+        .shop-channels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .shop-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 14px;
+            padding: 20px 24px;
+            text-decoration: none;
+            color: #fff;
+            transition: background 0.2s, border-color 0.2s, transform 0.2s;
+        }
+        .shop-card:hover {
+            background: rgba(0, 229, 255, 0.08);
+            border-color: #00E5FF;
+            transform: translateY(-2px);
+        }
+        .shop-card.disabled {
+            opacity: 0.45;
+            cursor: default;
+        }
+        .shop-card.disabled:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.1);
+            transform: none;
+        }
+        .shop-card .shop-icon { font-size: 2em; flex-shrink: 0; }
+        .shop-card .shop-info h3 { font-size: 1.05em; margin-bottom: 4px; }
+        .shop-card .shop-info p { font-size: 0.85em; color: #999; }
+        .shop-card .shop-info .badge {
+            display: inline-block;
+            font-size: 0.7em;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-top: 4px;
+        }
+        .badge-live { background: #1DB954; color: #000; }
+        .badge-soon { background: rgba(255,255,255,0.1); color: #888; }
+
         .cta {
             text-align: center;
             padding: 60px 20px;
@@ -97,12 +179,14 @@
             text-decoration: none;
             font-size: 1.1em;
             font-weight: 600;
-            transition: transform 0.2s;
+            transition: transform 0.2s, opacity 0.2s;
         }
         .cta-btn:hover { transform: scale(1.05); }
         .cta-primary { background: #00E5FF; color: #000; }
         .cta-secondary { background: transparent; border: 2px solid #00E5FF; color: #00E5FF; }
-        
+        .cta-amazon { background: #FF9900; color: #000; }
+        .cta-amazon:hover { background: #FFB84D; }
+
         .footer {
             text-align: center;
             padding: 40px 20px;
@@ -110,9 +194,27 @@
             color: #666;
             font-size: 0.9em;
         }
-        .footer a { color: #00E5FF; text-decoration: none; margin: 0 10px; }
-        .footer a:hover { text-decoration: underline; }
-        
+        .footer-links { margin: 15px 0; }
+        .footer-links a {
+            color: #00E5FF;
+            text-decoration: none;
+            margin: 0 12px;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover { color: #fff; text-decoration: underline; }
+        .footer-social { margin: 20px 0 10px; }
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: #888;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.95em;
+            transition: color 0.2s;
+        }
+        .footer-social a:hover { color: #00E5FF; }
+
         .disclosure {
             max-width: 700px;
             margin: 20px auto 0;
@@ -123,20 +225,31 @@
             color: #666;
             text-align: center;
         }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.2em; }
+            .hero .tagline { font-size: 1em; }
+            .arrow { display: none; }
+            .platforms { gap: 10px; }
+            .platform-badge { padding: 6px 14px; font-size: 0.85em; }
+        }
     </style>
 </head>
 <body>
     <div class="hero">
         <h1>🖨️ <span>Layered</span> Up</h1>
         <p class="tagline">3D Printed Products & Maker Deals — Straight Off the Print Bed</p>
-        
+
         <div class="platforms">
-            <span class="platform-badge">🎬 TikTok Shop</span>
-            <span class="platform-badge">📺 YouTube</span>
-            <span class="platform-badge">🛍️ Etsy</span>
-            <span class="platform-badge">📱 Telegram</span>
-            <span class="platform-badge">📌 Pinterest</span>
-            <span class="platform-badge">🛒 Amazon</span>
+            <!-- LIVE links -->
+            <a href="https://t.me/LayeredUp" target="_blank" class="platform-badge">📱 Telegram</a>
+            <a href="https://www.amazon.com/shop/influencer-a09211e7?tag=liferestock-20" target="_blank" class="platform-badge">🛒 Amazon</a>
+
+            <!-- Coming soon — swap class="coming-soon" to active + add href when live -->
+            <span class="platform-badge coming-soon" data-platform="tiktok">🎬 TikTok Shop</span>
+            <span class="platform-badge coming-soon" data-platform="youtube">📺 YouTube</span>
+            <span class="platform-badge coming-soon" data-platform="etsy">🛍️ Etsy</span>
+            <span class="platform-badge coming-soon" data-platform="pinterest">📌 Pinterest</span>
         </div>
     </div>
 
@@ -186,24 +299,123 @@
         </div>
     </div>
 
+    <!-- Shop channels section — all platforms with status -->
+    <div class="section">
+        <h2>Shop <span>Everywhere</span></h2>
+        <div class="shop-channels">
+            <a href="https://t.me/LayeredUp" target="_blank" class="shop-card">
+                <div class="shop-icon">📱</div>
+                <div class="shop-info">
+                    <h3>Telegram — @LayeredUp</h3>
+                    <p>Deal alerts, new drops, print announcements</p>
+                    <span class="badge badge-live">✓ Live</span>
+                </div>
+            </a>
+            <a href="https://www.amazon.com/shop/influencer-a09211e7?tag=liferestock-20" target="_blank" class="shop-card">
+                <div class="shop-icon">🛒</div>
+                <div class="shop-info">
+                    <h3>Amazon Storefront</h3>
+                    <p>Curated printing supplies, tools & maker gear</p>
+                    <span class="badge badge-live">✓ Live</span>
+                </div>
+            </a>
+            <!-- Coming soon — replace href="#" and remove .disabled when accounts are set up -->
+            <div class="shop-card disabled" data-url="TIKTOK_SHOP_URL">
+                <div class="shop-icon">🎬</div>
+                <div class="shop-info">
+                    <h3>TikTok Shop</h3>
+                    <p>Buy direct from our videos — tap to shop</p>
+                    <span class="badge badge-soon">Coming Soon</span>
+                </div>
+            </div>
+            <div class="shop-card disabled" data-url="YOUTUBE_CHANNEL_URL">
+                <div class="shop-icon">📺</div>
+                <div class="shop-info">
+                    <h3>YouTube Shorts</h3>
+                    <p>Timelapse content + affiliate links in description</p>
+                    <span class="badge badge-soon">Coming Soon</span>
+                </div>
+            </div>
+            <div class="shop-card disabled" data-url="ETSY_SHOP_URL">
+                <div class="shop-icon">🛍️</div>
+                <div class="shop-info">
+                    <h3>Etsy Shop</h3>
+                    <p>Premium handmade prints — artisan pricing</p>
+                    <span class="badge badge-soon">Coming Soon</span>
+                </div>
+            </div>
+            <div class="shop-card disabled" data-url="PINTEREST_PROFILE_URL">
+                <div class="shop-icon">📌</div>
+                <div class="shop-info">
+                    <h3>Pinterest</h3>
+                    <p>Product pins, inspiration boards, print ideas</p>
+                    <span class="badge badge-soon">Coming Soon</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="cta section">
-        <h2>Find Us <span>Everywhere</span></h2>
+        <h2>Get <span>Started</span></h2>
+        <p style="color: #999; max-width: 500px; margin: 0 auto;">Join our Telegram for instant deal alerts, or browse our curated Amazon storefront for maker supplies.</p>
         <div class="cta-buttons">
-            <a href="#" class="cta-btn cta-primary">TikTok Shop (Coming Soon)</a>
-            <a href="#" class="cta-btn cta-secondary">Join Our Telegram</a>
+            <a href="https://t.me/LayeredUp" target="_blank" class="cta-btn cta-primary">📱 Join Telegram</a>
+            <a href="https://www.amazon.com/shop/influencer-a09211e7?tag=liferestock-20" target="_blank" class="cta-btn cta-amazon">🛒 Amazon Storefront</a>
         </div>
     </div>
 
     <div class="footer">
         <p>© 2026 Layered Up. All rights reserved.</p>
-        <p style="margin-top: 10px;">
+
+        <div class="footer-social">
+            <a href="https://t.me/LayeredUp" target="_blank">📱 Telegram</a>
+            <a href="https://www.amazon.com/shop/influencer-a09211e7?tag=liferestock-20" target="_blank">🛒 Amazon</a>
+            <!-- Uncomment and fill when live:
+            <a href="TIKTOK_SHOP_URL" target="_blank">🎬 TikTok</a>
+            <a href="YOUTUBE_CHANNEL_URL" target="_blank">📺 YouTube</a>
+            <a href="ETSY_SHOP_URL" target="_blank">🛍️ Etsy</a>
+            <a href="PINTEREST_PROFILE_URL" target="_blank">📌 Pinterest</a>
+            -->
+        </div>
+
+        <div class="footer-links">
             <a href="/layeredup/terms.html">Terms of Service</a>
             <a href="/layeredup/privacy.html">Privacy Policy</a>
-        </p>
+        </div>
+
         <div class="disclosure">
-            As an Amazon Associate, Layered Up earns from qualifying purchases. 
+            As an Amazon Associate, Layered Up earns from qualifying purchases.
             We participate in affiliate programs and may earn commissions on recommended products at no additional cost to you.
         </div>
     </div>
+
+    <!--
+    ════════════════════════════════════════════════════════════
+    PLUG & PLAY — When new platform accounts go live:
+
+    1. TikTok Shop:
+       - Replace data-url="TIKTOK_SHOP_URL" with your shop URL
+       - Change .disabled → .shop-card (add <a href="...">)
+       - Change .coming-soon badge → .badge-live
+       - Uncomment footer link
+
+    2. YouTube:
+       - Replace data-url="YOUTUBE_CHANNEL_URL" with channel URL
+       - Same swap as above
+       - Uncomment footer link
+
+    3. Etsy:
+       - Replace data-url="ETSY_SHOP_URL" with shop URL
+       - Same swap
+       - Uncomment footer link
+
+    4. Pinterest:
+       - Replace data-url="PINTEREST_PROFILE_URL" with profile URL
+       - Same swap
+       - Uncomment footer link
+
+    Each platform just needs: URL, remove .disabled/.coming-soon, uncomment footer
+    ════════════════════════════════════════════════════════════
+    -->
 </body>
 </html>
