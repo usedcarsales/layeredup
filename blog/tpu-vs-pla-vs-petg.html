@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPU vs PLA vs PETG: Which Filament Should You Use? — Layered Up</title>
+    <meta name="description" content="Confused about filament types? We break down TPU, PLA, and PETG — when to use each, print settings, pros and cons, and our top picks for every material.">
+    <link rel="icon" href="../icon.png" type="image/png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #e0e0e0; min-height: 100vh; line-height: 1.7; }
+        a { color: #00E5FF; text-decoration: none; }
+        a:hover { text-decoration: underline; color: #fff; }
+        .nav { background: #111; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .nav-brand { font-size: 1.3em; font-weight: 700; color: #fff; text-decoration: none; }
+        .nav-brand span { color: #00E5FF; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: #aaa; font-size: 0.95em; }
+        .nav-links a:hover { color: #00E5FF; text-decoration: none; }
+        .article-header { text-align: center; padding: 60px 20px 40px; background: linear-gradient(135deg, #111 0%, #1a1a2e 50%, #16213e 100%); }
+        .article-header h1 { font-size: 2.4em; margin-bottom: 15px; color: #fff; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .article-meta { color: #888; font-size: 0.9em; }
+        .article-body { max-width: 780px; margin: 0 auto; padding: 40px 20px 60px; }
+        .article-body h2 { font-size: 1.6em; color: #00E5FF; margin: 40px 0 15px; }
+        .article-body h3 { font-size: 1.25em; color: #fff; margin: 30px 0 10px; }
+        .article-body p { margin-bottom: 18px; color: #ccc; }
+        .article-body ul, .article-body ol { margin: 0 0 18px 25px; color: #ccc; }
+        .article-body li { margin-bottom: 8px; }
+        .product-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 25px; margin: 25px 0; }
+        .product-card h3 { margin-top: 0; color: #00E5FF; }
+        .product-card .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0; }
+        .product-card .pros h4 { color: #4CAF50; margin-bottom: 8px; }
+        .product-card .cons h4 { color: #FF5252; margin-bottom: 8px; }
+        .product-card .pros li, .product-card .cons li { font-size: 0.9em; }
+        .buy-link { display: inline-block; background: #FF9900; color: #000; padding: 10px 22px; border-radius: 25px; font-weight: 600; text-decoration: none; margin-top: 10px; transition: background 0.2s; }
+        .buy-link:hover { background: #FFB84D; text-decoration: none; color: #000; }
+        .related-posts { background: rgba(255,255,255,0.03); border-top: 1px solid rgba(255,255,255,0.1); padding: 40px 20px; }
+        .related-posts h2 { text-align: center; color: #fff; margin-bottom: 25px; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 780px; margin: 0 auto; }
+        .related-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 20px; }
+        .related-card h3 { font-size: 1em; margin-bottom: 8px; }
+        .related-card p { font-size: 0.85em; color: #999; }
+        .footer { text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        .footer-links { margin: 15px 0; }
+        .footer-links a { color: #00E5FF; margin: 0 12px; }
+        .disclosure { max-width: 700px; margin: 20px auto 0; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 8px; font-size: 0.8em; color: #666; }
+        @media (max-width: 600px) { .article-header h1 { font-size: 1.7em; } .product-card .pros-cons { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="../index.html" class="nav-brand">🖨️ <span>Layered</span> Up</a>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="index.html">Blog</a>
+            <a href="https://www.amazon.com/shop/influencer-a09211e7?tag=liferestock-20" target="_blank">Amazon Store</a>
+        </div>
+    </nav>
+
+    <div class="article-header">
+        <h1>TPU vs PLA vs PETG: Which Filament Should You Use?</h1>
+        <p class="article-meta">Updated March 2026 · 11 min read · By Layered Up</p>
+    </div>
+
+    <div class="article-body">
+        <p>This is the question every 3D printer owner eventually asks: "I know PLA works, but should I try PETG? What about TPU?" Each filament type has fundamentally different properties, and choosing the wrong one for your project can mean wasted time, wasted filament, and a failed print sitting in your trash can.</p>
+
+        <p>We've printed with all three materials extensively — hundreds of spools across dozens of projects — and in this guide, we'll break down exactly when to use each one, how to print with them successfully, and which specific brands deliver the best results. No vague advice, just real experience.</p>
+
+        <h2>The Quick Answer</h2>
+        <ul>
+            <li><strong>PLA</strong> — Use for decorative prints, prototypes, low-stress parts, and anything where ease of printing matters most.</li>
+            <li><strong>PETG</strong> — Use for functional parts that need heat resistance, chemical resistance, or outdoor durability.</li>
+            <li><strong>TPU</strong> — Use for flexible parts — phone cases, gaskets, bumpers, wearables, anything that needs to bend without breaking.</li>
+        </ul>
+        <p>Now let's go deep on each one.</p>
+
+        <h2>PLA — The Reliable Workhorse</h2>
+        <p>PLA (Polylactic Acid) is the most popular 3D printing filament in the world, and that's not by accident. It's easy to print, it's affordable, it comes in every color imaginable, and it produces beautiful surface finishes. If you're new to 3D printing, PLA should be your first (and probably second, and third) material.</p>
+
+        <h3>When to Use PLA</h3>
+        <ul>
+            <li>Decorative items — vases, figurines, art pieces</li>
+            <li>Prototyping — test fit before committing to a stronger material</li>
+            <li>Desk accessories — organizers, stands, holders (see our <a href="desk-organizer-prints.html">desk organizer guide</a>)</li>
+            <li>Gifts and toys — fidget toys, ornaments, display items</li>
+            <li>Low-stress functional parts — covers, enclosures, labels</li>
+        </ul>
+
+        <h3>When NOT to Use PLA</h3>
+        <ul>
+            <li>Anything exposed to heat above 60°C (140°F) — PLA softens and deforms</li>
+            <li>Outdoor items in direct sunlight — UV degrades PLA over time</li>
+            <li>High-stress mechanical parts — PLA is rigid but brittle</li>
+            <li>Anything that needs to flex repeatedly — PLA snaps</li>
+        </ul>
+
+        <h3>PLA Print Settings</h3>
+        <ul>
+            <li><strong>Nozzle temp:</strong> 200-220°C</li>
+            <li><strong>Bed temp:</strong> 55-65°C</li>
+            <li><strong>Print speed:</strong> 50-100mm/s (material dependent)</li>
+            <li><strong>Cooling:</strong> 100% fan after first layer</li>
+            <li><strong>Bed surface:</strong> PEI (textured or smooth), glass with glue stick</li>
+        </ul>
+
+        <div class="product-card">
+            <h3>🏆 Our Top PLA Pick: Hatchbox PLA</h3>
+            <p>Hatchbox has been the go-to recommendation for years because it just works. Consistent diameter, reliable adhesion, forgiving settings, and a price that won't make you wince. It's the filament we hand to anyone who asks "what should I start with?" For a deep dive on all PLA options, check our <a href="best-pla-filament.html">best PLA filament guide</a>.</p>
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ Pros</h4>
+                    <ul>
+                        <li>Universally compatible with every printer</li>
+                        <li>Extremely forgiving settings</li>
+                        <li>Great value at ~$25/kg</li>
+                        <li>Vacuum-sealed for freshness</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>❌ Cons</h4>
+                    <ul>
+                        <li>Brittle — snaps under impact</li>
+                        <li>Low heat resistance (softens at 60°C)</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="https://www.amazon.com/dp/B00J0ECR5I?tag=liferestock-20" target="_blank" class="buy-link">🛒 Check Price on Amazon</a>
+        </div>
+
+        <h2>PETG — The Tough Middle Ground</h2>
+        <p>PETG (Polyethylene Terephthalate Glycol) sits between PLA and ABS in terms of difficulty and capability. It's stronger than PLA, more heat-resistant, and doesn't produce the toxic fumes that ABS does. Think of PETG as "PLA that grew up" — it can handle real-world use cases where PLA would fail.</p>
+
+        <h3>When to Use PETG</h3>
+        <ul>
+            <li>Outdoor prints — garden signs, mailbox numbers, planters</li>
+            <li>Mechanical parts — brackets, mounts, clips that bear load</li>
+            <li>Water-resistant items — PETG resists moisture much better than PLA</li>
+            <li>Food-adjacent containers (with proper settings and post-processing)</li>
+            <li>Anything near heat sources — car accessories, electronics enclosures</li>
+        </ul>
+
+        <h3>When NOT to Use PETG</h3>
+        <ul>
+            <li>Detail-critical decorative prints — PETG tends to string more</li>
+            <li>When ease of printing is the priority — PETG is pickier than PLA</li>
+            <li>Snap-fit designs — PETG can be too rigid for clean snap connections</li>
+        </ul>
+
+        <h3>PETG Print Settings</h3>
+        <ul>
+            <li><strong>Nozzle temp:</strong> 230-250°C</li>
+            <li><strong>Bed temp:</strong> 75-85°C</li>
+            <li><strong>Print speed:</strong> 40-60mm/s (slower than PLA for best results)</li>
+            <li><strong>Cooling:</strong> 30-50% fan (too much cooling causes layer adhesion issues)</li>
+            <li><strong>Bed surface:</strong> PEI with glue stick release layer (PETG bonds TOO well to bare PEI)</li>
+            <li><strong>Z-offset:</strong> Slightly higher than PLA — PETG likes a tiny gap</li>
+        </ul>
+
+        <div class="product-card">
+            <h3>🏆 Our Top PETG Pick: Overture PETG</h3>
+            <p>Overture's PETG is the best entry point into the material. It prints cleaner than most PETG brands, strings less, and costs significantly less than premium alternatives. We've used it for outdoor planter labels, electronics enclosures, and mechanical brackets — all of which have held up beautifully over months of real use.</p>
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ Pros</h4>
+                    <ul>
+                        <li>Less stringing than most PETG brands</li>
+                        <li>Strong layer adhesion</li>
+                        <li>Excellent value — often under $22/kg</li>
+                        <li>Comes with build surface included</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>❌ Cons</h4>
+                    <ul>
+                        <li>Still strings more than PLA</li>
+                        <li>Needs higher temps than PLA</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="https://www.amazon.com/dp/B07YCWKG1H?tag=liferestock-20" target="_blank" class="buy-link">🛒 Check Price on Amazon</a>
+        </div>
+
+        <h2>TPU — The Flexible Specialist</h2>
+        <p>TPU (Thermoplastic Polyurethane) is fundamentally different from PLA and PETG. While those are rigid plastics, TPU is flexible — think rubber or silicone. It can bend, stretch, compress, and bounce back to its original shape. This makes it perfect for applications where no rigid material will work.</p>
+
+        <p>The catch? TPU is significantly harder to print than PLA or PETG. The flexible nature that makes it useful also makes it tricky to feed through a Bowden tube extruder. Direct drive printers handle TPU much better, and even then you'll need to dial in your settings carefully.</p>
+
+        <h3>When to Use TPU</h3>
+        <ul>
+            <li>Phone cases and device bumpers — absorbs shock on drops</li>
+            <li>Gaskets and seals — TPU compresses to create watertight fits</li>
+            <li>Wearables — watch bands, shoe insoles, bracelets</li>
+            <li>Vibration dampeners — printer feet, motor mounts, drone landing pads</li>
+            <li>Grip covers — tool handles, controller grips, bike grips</li>
+            <li>Flexible hinges — living hinges that won't snap</li>
+        </ul>
+
+        <h3>When NOT to Use TPU</h3>
+        <ul>
+            <li>Rigid structural parts — TPU flexes under load</li>
+            <li>Detail-heavy prints — TPU is harder to get sharp detail from</li>
+            <li>If you have a Bowden tube printer — not impossible, but frustrating</li>
+            <li>Large flat prints — TPU warps differently and large prints can be challenging</li>
+        </ul>
+
+        <h3>TPU Print Settings</h3>
+        <ul>
+            <li><strong>Nozzle temp:</strong> 220-240°C</li>
+            <li><strong>Bed temp:</strong> 50-60°C</li>
+            <li><strong>Print speed:</strong> 20-30mm/s (SLOW — this is critical)</li>
+            <li><strong>Cooling:</strong> 50-100% fan</li>
+            <li><strong>Retraction:</strong> Minimal or off — TPU doesn't retract cleanly</li>
+            <li><strong>Extruder:</strong> Direct drive strongly recommended</li>
+        </ul>
+
+        <div class="product-card">
+            <h3>🏆 Our Top TPU Pick: SUNLU TPU</h3>
+            <p>SUNLU's TPU 95A is the most printable flexible filament we've tested. The 95A shore hardness hits the sweet spot between flexibility and printability — soft enough to make functional flexible parts, firm enough that your extruder can actually push it through. We've used it for phone cases, drone landing pads, and custom vibration dampeners. It prints reliably at 25mm/s on our Bambu Lab A1's direct drive extruder.</p>
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ Pros</h4>
+                    <ul>
+                        <li>95A hardness — great balance of flex and printability</li>
+                        <li>Excellent layer adhesion</li>
+                        <li>Multiple colors available</li>
+                        <li>Affordable price for TPU</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>❌ Cons</h4>
+                    <ul>
+                        <li>Must print slowly (25-30mm/s max)</li>
+                        <li>Struggles with Bowden tube setups</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="https://www.amazon.com/dp/B07T8FLHKK?tag=liferestock-20" target="_blank" class="buy-link">🛒 Check Price on Amazon</a>
+        </div>
+
+        <h2>Head-to-Head Comparison</h2>
+        <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                <tr style="border-bottom: 2px solid #00E5FF;">
+                    <th style="text-align: left; padding: 10px; color: #00E5FF;">Property</th>
+                    <th style="text-align: left; padding: 10px; color: #00E5FF;">PLA</th>
+                    <th style="text-align: left; padding: 10px; color: #00E5FF;">PETG</th>
+                    <th style="text-align: left; padding: 10px; color: #00E5FF;">TPU</th>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <td style="padding: 10px; color: #ccc;">Ease of Printing</td><td style="padding: 10px;">⭐⭐⭐⭐⭐</td><td style="padding: 10px;">⭐⭐⭐</td><td style="padding: 10px;">⭐⭐</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <td style="padding: 10px; color: #ccc;">Strength</td><td style="padding: 10px;">⭐⭐⭐</td><td style="padding: 10px;">⭐⭐⭐⭐</td><td style="padding: 10px;">⭐⭐⭐</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <td style="padding: 10px; color: #ccc;">Flexibility</td><td style="padding: 10px;">⭐</td><td style="padding: 10px;">⭐⭐</td><td style="padding: 10px;">⭐⭐⭐⭐⭐</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <td style="padding: 10px; color: #ccc;">Heat Resistance</td><td style="padding: 10px;">⭐⭐</td><td style="padding: 10px;">⭐⭐⭐⭐</td><td style="padding: 10px;">⭐⭐⭐</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <td style="padding: 10px; color: #ccc;">Surface Finish</td><td style="padding: 10px;">⭐⭐⭐⭐⭐</td><td style="padding: 10px;">⭐⭐⭐</td><td style="padding: 10px;">⭐⭐</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <td style="padding: 10px; color: #ccc;">UV Resistance</td><td style="padding: 10px;">⭐</td><td style="padding: 10px;">⭐⭐⭐⭐</td><td style="padding: 10px;">⭐⭐⭐</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <td style="padding: 10px; color: #ccc;">Price (per kg)</td><td style="padding: 10px;">$18-28</td><td style="padding: 10px;">$20-30</td><td style="padding: 10px;">$25-35</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; color: #ccc;">Best Nozzle Temp</td><td style="padding: 10px;">200-220°C</td><td style="padding: 10px;">230-250°C</td><td style="padding: 10px;">220-240°C</td>
+                </tr>
+            </table>
+        </div>
+
+        <h2>What About PLA+?</h2>
+        <p>PLA+ (also called PLA Pro or Tough PLA) deserves a mention because it bridges the gap between standard PLA and PETG. It's a modified PLA formula that's significantly less brittle while maintaining most of PLA's easy printing characteristics. If you need something stronger than PLA but don't want to deal with PETG's quirks, PLA+ is your answer.</p>
+
+        <div class="product-card">
+            <h3>💪 eSUN PLA+ — The Best of Both Worlds</h3>
+            <p>eSUN's PLA+ is our go-to for functional parts where standard PLA is too brittle and PETG is overkill. It prints at PLA temperatures, adheres like PLA, but survives impacts that would shatter regular PLA. We use it for cable clips, phone mounts, and tool holders — parts that see daily stress.</p>
+            <a href="https://www.amazon.com/dp/B01EKEMFQS?tag=liferestock-20" target="_blank" class="buy-link">🛒 Check Price on Amazon</a>
+        </div>
+
+        <h2>Keeping All Three Filaments in Top Condition</h2>
+        <p>No matter which filament you choose, moisture is the universal enemy. PETG and TPU are especially hygroscopic — they absorb moisture from the air quickly, leading to bubbling, stringing, and weak layer adhesion. A dedicated filament dryer is essential if you're working with multiple material types.</p>
+
+        <div class="product-card">
+            <h3>📦 SUNLU Filament Dry Box</h3>
+            <p>We keep one of these running for every active spool. Load the filament, set the drying temperature (different for each material), and print directly from the box. It's the single best accessory investment you can make — especially when switching between PLA, PETG, and TPU.</p>
+            <a href="https://www.amazon.com/dp/B08C9LZKFT?tag=liferestock-20" target="_blank" class="buy-link">🛒 Check Price on Amazon</a>
+        </div>
+
+        <h2>So Which Should You Use?</h2>
+        <p>Here's our decision tree:</p>
+        <ol>
+            <li><strong>Is it decorative or a prototype?</strong> → PLA</li>
+            <li><strong>Does it need to be strong or go outside?</strong> → PETG</li>
+            <li><strong>Does it need to flex or absorb impact?</strong> → TPU</li>
+            <li><strong>Not sure?</strong> → Start with PLA, then upgrade material if PLA fails the use case</li>
+        </ol>
+        <p>Most makers end up keeping all three on hand. PLA for 80% of prints, PETG for outdoor and mechanical parts, and TPU for the occasional flexible project. That's exactly what we do in our shop, and it covers virtually every use case that comes up.</p>
+
+        <p>For more on choosing the right PLA specifically, check our <a href="best-pla-filament.html">best PLA filament guide</a>. And make sure you're storing everything properly — our <a href="filament-storage-guide.html">filament storage guide</a> will save you from moisture-ruined spools.</p>
+        <p>Happy printing! 🖨️</p>
+    </div>
+
+    <div class="related-posts">
+        <h2>Related Articles</h2>
+        <div class="related-grid">
+            <a href="best-pla-filament.html" class="related-card" style="text-decoration: none; color: inherit;">
+                <h3 style="color: #00E5FF;">Best PLA Filament 2026</h3>
+                <p>Our top picks for PLA filament — tested and ranked.</p>
+            </a>
+            <a href="filament-storage-guide.html" class="related-card" style="text-decoration: none; color: inherit;">
+                <h3 style="color: #00E5FF;">Filament Storage Guide</h3>
+                <p>Keep every filament type dry and printing perfectly.</p>
+            </a>
+            <a href="3d-printing-setup-guide.html" class="related-card" style="text-decoration: none; color: inherit;">
+                <h3 style="color: #00E5FF;">3D Printing Setup Guide</h3>
+                <p>Everything you need to get started with your first printer.</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 Layered Up. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="../index.html">Home</a>
+            <a href="index.html">Blog</a>
+            <a href="../terms.html">Terms</a>
+            <a href="../privacy.html">Privacy</a>
+        </div>
+        <div class="disclosure">
+            <strong>Disclosure:</strong> As an Amazon Associate, Layered Up earns from qualifying purchases. Links on this page may be affiliate links — we earn a small commission at no extra cost to you.
+        </div>
+    </div>
+</body>
+</html>

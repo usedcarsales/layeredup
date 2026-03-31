@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — Reviews, Guides & 3D Printing Tips — Layered Up</title>
+    <meta name="description" content="3D printing guides, filament reviews, product roundups, and maker tips. Everything you need to level up your printing game.">
+    <link rel="icon" href="../icon.png" type="image/png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #e0e0e0; min-height: 100vh; line-height: 1.7; }
+        a { color: #00E5FF; text-decoration: none; }
+        a:hover { text-decoration: underline; color: #fff; }
+        .nav { background: #111; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .nav-brand { font-size: 1.3em; font-weight: 700; color: #fff; text-decoration: none; }
+        .nav-brand span { color: #00E5FF; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: #aaa; font-size: 0.95em; }
+        .nav-links a:hover { color: #00E5FF; text-decoration: none; }
+        .blog-header { text-align: center; padding: 60px 20px 40px; background: linear-gradient(135deg, #111 0%, #1a1a2e 50%, #16213e 100%); }
+        .blog-header h1 { font-size: 2.4em; margin-bottom: 15px; color: #fff; }
+        .blog-header p { color: #888; font-size: 1.1em; max-width: 600px; margin: 0 auto; }
+        .blog-grid { max-width: 900px; margin: 0 auto; padding: 40px 20px 60px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .blog-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 28px; transition: background 0.2s, border-color 0.2s, transform 0.2s; text-decoration: none; color: inherit; display: block; }
+        .blog-card:hover { background: rgba(0, 229, 255, 0.06); border-color: rgba(0, 229, 255, 0.3); transform: translateY(-3px); text-decoration: none; }
+        .blog-card .card-tag { display: inline-block; font-size: 0.75em; padding: 3px 10px; border-radius: 12px; margin-bottom: 12px; font-weight: 600; }
+        .tag-review { background: rgba(0, 229, 255, 0.15); color: #00E5FF; }
+        .tag-guide { background: rgba(76, 175, 80, 0.15); color: #4CAF50; }
+        .tag-comparison { background: rgba(255, 152, 0, 0.15); color: #FF9800; }
+        .blog-card h2 { font-size: 1.2em; color: #fff; margin-bottom: 10px; line-height: 1.4; }
+        .blog-card p { font-size: 0.9em; color: #999; margin-bottom: 12px; }
+        .blog-card .read-more { font-size: 0.85em; color: #00E5FF; font-weight: 600; }
+        .footer { text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        .footer-links { margin: 15px 0; }
+        .footer-links a { color: #00E5FF; margin: 0 12px; }
+        .disclosure { max-width: 700px; margin: 20px auto 0; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 8px; font-size: 0.8em; color: #666; }
+        @media (max-width: 600px) { .blog-header h1 { font-size: 1.7em; } .blog-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="../index.html" class="nav-brand">🖨️ <span>Layered</span> Up</a>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="index.html">Blog</a>
+            <a href="https://www.amazon.com/shop/influencer-a09211e7?tag=liferestock-20" target="_blank">Amazon Store</a>
+        </div>
+    </nav>
+
+    <div class="blog-header">
+        <h1>📚 Reviews & Guides</h1>
+        <p>3D printing guides, filament reviews, and maker tips — everything you need to level up your printing game.</p>
+    </div>
+
+    <div class="blog-grid">
+        <a href="best-pla-filament.html" class="blog-card">
+            <span class="card-tag tag-review">Review</span>
+            <h2>Best PLA Filament for 3D Printing in 2026</h2>
+            <p>We tested dozens of PLA filaments so you don't have to. Here are the top picks ranked by print quality, consistency, and value.</p>
+            <span class="read-more">Read Article →</span>
+        </a>
+
+        <a href="tpu-vs-pla-vs-petg.html" class="blog-card">
+            <span class="card-tag tag-comparison">Comparison</span>
+            <h2>TPU vs PLA vs PETG: Which Filament Should You Use?</h2>
+            <p>Each filament type has different strengths. We break down when to use each one, print settings, and our top brand picks.</p>
+            <span class="read-more">Read Article →</span>
+        </a>
+
+        <a href="best-budget-3d-printers.html" class="blog-card">
+            <span class="card-tag tag-review">Review</span>
+            <h2>Best Budget 3D Printers in 2026</h2>
+            <p>You don't need to spend a fortune to get great prints. These budget-friendly printers deliver outstanding quality for the price.</p>
+            <span class="read-more">Read Article →</span>
+        </a>
+
+        <a href="3d-printing-setup-guide.html" class="blog-card">
+            <span class="card-tag tag-guide">Guide</span>
+            <h2>Complete 3D Printing Setup Guide for Beginners</h2>
+            <p>Everything you need to go from unboxing to your first successful print — printer setup, slicer settings, and first project tips.</p>
+            <span class="read-more">Read Article →</span>
+        </a>
+
+        <a href="filament-storage-guide.html" class="blog-card">
+            <span class="card-tag tag-guide">Guide</span>
+            <h2>The Ultimate Filament Storage Guide</h2>
+            <p>Moisture is the enemy of good prints. Learn how to store your filament properly and keep every spool in perfect condition.</p>
+            <span class="read-more">Read Article →</span>
+        </a>
+
+        <a href="rainbow-silk-pla-review.html" class="blog-card">
+            <span class="card-tag tag-review">Review</span>
+            <h2>Rainbow Silk PLA Review: Is the Hype Real?</h2>
+            <p>Color-changing silk filament that makes every print unique. We put it through its paces and share our honest take.</p>
+            <span class="read-more">Read Article →</span>
+        </a>
+
+        <a href="3d-printer-accessories.html" class="blog-card">
+            <span class="card-tag tag-guide">Guide</span>
+            <h2>Must-Have 3D Printer Accessories in 2026</h2>
+            <p>The essential tools, upgrades, and accessories that every 3D printer owner needs. From dry boxes to build plates.</p>
+            <span class="read-more">Read Article →</span>
+        </a>
+
+        <a href="best-fidget-toys.html" class="blog-card">
+            <span class="card-tag tag-guide">Guide</span>
+            <h2>Best Fidget Toys to 3D Print</h2>
+            <p>The most satisfying print-in-place fidget toys you can make at home. Articulated animals, spinners, and more.</p>
+            <span class="read-more">Read Article →</span>
+        </a>
+
+        <a href="desk-organizer-prints.html" class="blog-card">
+            <span class="card-tag tag-guide">Guide</span>
+            <h2>Best 3D Printed Desk Organizers for Your Home Office</h2>
+            <p>Transform your workspace with custom desk organizers. Cable management, pen holders, monitor risers, and more.</p>
+            <span class="read-more">Read Article →</span>
+        </a>
+
+        <a href="gift-ideas-3d-printing.html" class="blog-card">
+            <span class="card-tag tag-guide">Guide</span>
+            <h2>Unique 3D Printed Gift Ideas for Every Occasion</h2>
+            <p>Creative, personalized gifts you can 3D print for birthdays, holidays, and special occasions. Affordable and memorable.</p>
+            <span class="read-more">Read Article →</span>
+        </a>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 Layered Up. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="../index.html">Home</a>
+            <a href="index.html">Blog</a>
+            <a href="../terms.html">Terms</a>
+            <a href="../privacy.html">Privacy</a>
+        </div>
+        <div class="disclosure">
+            <strong>Disclosure:</strong> As an Amazon Associate, Layered Up earns from qualifying purchases. Links on this page may be affiliate links — we earn a small commission at no extra cost to you.
+        </div>
+    </div>
+</body>
+</html>
